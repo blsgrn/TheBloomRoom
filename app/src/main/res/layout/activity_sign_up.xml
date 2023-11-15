@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".SignUpActivity">
 
     <ImageView
         android:id="@+id/logo"
@@ -47,15 +47,24 @@
         android:padding="12dp"
         android:inputType="textPassword"/>
 
-
-
-    <Button
-        android:id="@+id/buttonLogin"
+    <EditText
+        android:id="@+id/editTextEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextConfirmPassword"
+        android:layout_marginTop="16dp"
+        android:hint="Email"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:inputType="textEmailAddress"/>
+
+    <Button
+        android:id="@+id/buttonSignup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextEmail"
         android:layout_marginTop="24dp"
-        android:text="Login"
+        android:text="Signup"
         android:background="@drawable/button_background"
         android:textColor="@android:color/white"
         android:padding="16dp"/>
@@ -64,22 +73,34 @@
         android:id="@+id/textViewLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/buttonLogin"
+        android:layout_below="@id/buttonSignup"
         android:layout_marginTop="16dp"
-        android:text="Not a registered customer? Signup"
+        android:text="Already a registered customer? Login"
         android:textColor="@android:color/darker_gray"
         android:gravity="center"/>
 
     <Button
-        android:id="@+id/buttonSignup"
+        android:id="@+id/buttonLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewLogin"
         android:layout_marginTop="8dp"
-        android:text="Signup"
+        android:text="Login"
         android:background="@drawable/button_background"
         android:textColor="@android:color/white"
         android:padding="16dp"/>
+    <TextView
+        android:id="@+id/textViewError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonLogin"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text=""
+        android:padding="8dp"
+        android:textColor="#FF0000"
+    android:background="#FFECECEC"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
