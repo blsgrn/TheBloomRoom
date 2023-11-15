@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                     } else {
                         // Redirect to DashboardActivity -- for all the non-admin users (regular users)
                         Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+                        intent.putExtra("USERNAME", username);
                         startActivity(intent);
                     }
                     finish(); // Finish the LoginActivity to prevent returning to it
