@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddFlowerActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"/>
+    <TextView
+        android:id="@+id/textViewError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text=""
+        android:padding="8dp"
+        android:textColor="#FF0000"
+        android:background="#FFECECEC"/>
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="32dp"
+        android:hint="Flower Name"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextName"
+        android:layout_marginTop="16dp"
+        android:hint="Description"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/editTextPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextDescription"
+        android:layout_marginTop="16dp"
+        android:hint="Price"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:inputType="numberDecimal"/>
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextCategory"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@id/editTextPrice"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:hint="Category"-->
+<!--        android:background="@drawable/edit_text_background"-->
+<!--        android:padding="12dp"-->
+<!--        android:inputType="text"/>-->
+    <Spinner
+        android:id="@+id/spinnerCategory"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPrice"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/edit_text_background"
+        android:minHeight="48dp"
+        android:padding="12dp" />
+
+    <EditText
+        android:id="@+id/editTextImageFilename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinnerCategory"
+        android:layout_marginTop="16dp"
+        android:hint="filename (eg: english_rose)"
+        android:background="@drawable/edit_text_background"
+        android:padding="12dp"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/btnAddFlower"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextImageFilename"
+        android:layout_marginTop="24dp"
+        android:text="Add Flower"
+        android:background="@drawable/button_background"
+        android:textColor="@android:color/white"
+        android:padding="16dp"/>
+
+
+</RelativeLayout>

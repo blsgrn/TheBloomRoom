@@ -66,7 +66,7 @@ BottomNavigationView bottomNavigationView;
                         textViewError.setText("Please fill in all fields.");
                     } else if (!password.equals(confirmPassword)) { //Checking if the user entered values in Password input field & Confirm Password input filed match
                         textViewError.setText("Passwords do not match.");
-                    } else if (!isValidEmail(email)) {//Cheking if the user has entered a proper email, to check this Email format checking regular expression is used
+                    } else if (!isValidEmail(email)) {//Checking if the user has entered a proper email, to check this Email format checking regular expression is used
                         textViewError.setText("Invalid email address.");
                     } else {
                         // Open the database for writing
@@ -81,8 +81,8 @@ BottomNavigationView bottomNavigationView;
                         // Insert user data into the database
                         long newRowId = db.insert("users", null, values);
 
-                        // Close the database
-                        //dbHelper.close();
+//                         Close the database
+                        dbHelper.close();
 
 
                         if (newRowId != -1) {
