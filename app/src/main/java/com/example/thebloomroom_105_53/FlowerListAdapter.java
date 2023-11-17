@@ -32,12 +32,12 @@ public class FlowerListAdapter extends RecyclerView.Adapter<FlowerListAdapter.Fl
     public void onBindViewHolder(@NonNull FlowerViewHolder holder, int position) {
         Flower flower = flowerList.get(position);
 
-        holder.textViewFlowerId.setText(String.valueOf(flower.getId()));
-        holder.textViewFlowerName.setText(flower.getName());
-        holder.textViewFlowerDescription.setText(flower.getDescription());
+        holder.textViewFlowerId.setText("Flower ID: " + String.valueOf(flower.getId()));
+        holder.textViewFlowerName.setText("Flower Name: " + flower.getName());
+        holder.textViewFlowerDescription.setText("Description: " + flower.getDescription());
         holder.textViewFlowerPrice.setText(String.format("Price: Rs %.2f", flower.getPrice()));
-        holder.textViewFlowerCategory.setText("Price: Rs" + flower.getCategory());
-        holder.textViewFlowerImageFilename.setText("Price: Rs" + flower.getImageFilename());
+        holder.textViewFlowerCategory.setText("Category: " + flower.getCategory());
+        holder.textViewFlowerImageFilename.setText("Image Filename: " + flower.getImageFilename());
     }
 
     @Override
