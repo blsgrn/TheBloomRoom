@@ -15,6 +15,6 @@
     <color name="selected_item_color">@color/primary_3</color>
     <color name="pressed_item_color">@color/primary_5</color>
     <color name="ripple_color">#827717</color>
-    <color name="icon_selected_color">#C0CA33</color>
+    <color name="icon_selected_color">#E6C0CA33</color>
     <color name="icon_default_color">#000</color>
 </resources>

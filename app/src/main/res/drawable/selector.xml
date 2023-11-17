@@ -5,8 +5,8 @@
         <shape android:shape="rectangle">
             <solid android:color="@color/selected_item_color" />
         </shape>
-
     </item>
+
 
     <item android:state_pressed="true">
         <ripple android:color="@color/ripple_color">
@@ -19,6 +19,7 @@
         android:state_selected="true"
         android:drawable="@color/primary_3"
         android:color="@color/white"/>
+
 
 
     <item

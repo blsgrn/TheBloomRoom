@@ -112,6 +112,7 @@
         app:itemIconSize="36dp"
         app:itemTextColor="@color/primary_3"
         app:itemIconTint="@color/primary_3"
+        app:labelVisibilityMode="labeled"
         app:menu="@menu/menu"
         android:layout_alignParentBottom="true"/>
 
