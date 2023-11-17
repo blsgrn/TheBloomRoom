@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
+   <!-- Background Color Selector -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/selected_item_color" />
+        </shape>
+
+    </item>
+
+    <item android:state_pressed="true">
+        <ripple android:color="@color/ripple_color">
+            <item android:drawable="@color/pressed_item_color" />
+        </ripple>
+    </item>
+
+    <!-- Icon Tint Color Selector -->
     <item
-    android:state_selected="true"
-    android:drawable="@color/purple_500"
-    android:color="@android:color/white"/>
+        android:state_selected="true"
+        android:drawable="@color/primary_3"
+        android:color="@color/white"/>
+
 
     <item
         android:state_selected="false"
-        android:color = "@android:color/black"/>
-
-
+        android:color="@color/black"/>
 </selector>

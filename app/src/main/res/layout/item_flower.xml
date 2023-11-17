@@ -48,7 +48,5 @@
         android:textSize="16sp"
         android:textColor="#333" />
 
-    <!-- Add more TextViews for other flower details if needed -->
-
 
 </LinearLayout>

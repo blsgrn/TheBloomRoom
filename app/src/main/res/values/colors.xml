@@ -2,5 +2,19 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="purple_500">#8E24AA</color>
+    <color name="secondary_1">#F5F8CC</color>
+    <color name="secondary_2">#EEF78F</color>
+    <color name="secondary_3">#BDCA89</color>
+    <color name="primary_1">#163922</color>
+    <color name="primary_2">#42531B</color>
+    <color name="primary_3">#588960</color>
+    <color name="primary_4">#689534</color>
+    <color name="primary_5">#8CB441</color>
+
+    //icon color
+    <color name="selected_item_color">@color/primary_3</color>
+    <color name="pressed_item_color">@color/primary_5</color>
+    <color name="ripple_color">#827717</color>
+    <color name="icon_selected_color">#C0CA33</color>
+    <color name="icon_default_color">#000</color>
 </resources>

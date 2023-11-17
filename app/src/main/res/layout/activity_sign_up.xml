@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".SignUpActivity">
 
     <ImageView
@@ -106,9 +107,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/bottom_navigator"
-        app:itemBackground="@color/purple_500"
-        app:itemTextColor="@drawable/selector"
-        app:itemIconTint="@drawable/selector"
+        app:itemBackground="@color/icon_selected_color"
+        app:itemIconSize="36dp"
+        app:itemTextColor="@color/primary_3"
+        app:itemIconTint="@color/primary_3"
         app:menu="@menu/menu"
         android:layout_alignParentBottom="true"/>
 
