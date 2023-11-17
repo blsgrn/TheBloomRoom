@@ -10,18 +10,28 @@ import android.widget.ImageButton;
 
 public class AdminPanelActivity extends AppCompatActivity {
 
-    ImageButton imageButtonAddFlower;
+    ImageButton imageButtonAddFlower, imageButtonViewFlowers;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_panel);
 
         imageButtonAddFlower = findViewById(R.id.imageButtonAddFlower);
+        imageButtonViewFlowers = findViewById(R.id.imageButtonViewFlowers);
 
         imageButtonAddFlower.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), AddFlowerActivity.class);
+                // Start the SignupActivity
+                startActivity(intent);
+            }
+        });
+
+        imageButtonViewFlowers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), FlowerListActivity.class);
                 // Start the SignupActivity
                 startActivity(intent);
             }

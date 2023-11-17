@@ -1,9 +1,13 @@
 package com.example.thebloomroom_105_53;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //import org.jetbrains.annotations.Nullable;
 
@@ -14,6 +18,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME1 = "users";
 
     public static final String TABLE_NAME2 = "flowers";
+
 
 
 
@@ -65,7 +70,32 @@ public class DBHelper extends SQLiteOpenHelper {
         // Create a new table with the updated schema
         onCreate(db);
 
+    }
+
+    public List<Flower> getAllFlowers() {
+        List<Flower> flowerList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME2, null);
+
+        while (cursor.moveToNext()) {
+
+            int flowerId = cursor.getInt(cursor.getColumnIndex("flower_id"));
+            String name = cursor.getString(cursor.getColumnIndex("name"));
+            String description = cursor.getString(cursor.getColumnIndex("description"));
+            double price = cursor.getDouble(cursor.getColumnIndex("price"));
+            String category = cursor.getString(cursor.getColumnIndex("category"));
+            String imageFilename = cursor.getString(cursor.getColumnIndex("image_filename"));
+
+            Flower flower = new Flower(flowerId, name, description, price, category, imageFilename);
+            flowerList.add(flower);
 
 
+        }
+
+        cursor.close();
+        db.close();
+
+        return flowerList;
     }
 }
