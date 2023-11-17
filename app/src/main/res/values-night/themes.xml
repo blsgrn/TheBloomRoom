@@ -2,6 +2,15 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.TheBloomRoom_105_53" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
+        <item name="colorPrimary">@color/primary_1</item>
+        <item name="colorPrimaryVariant">@color/primary_2</item>
+        <item name="colorOnPrimary">@color/primary_3</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/primary_4</item>
+        <item name="colorSecondaryVariant">@color/primary_5</item>
+        <item name="colorOnSecondary">@color/secondary_3</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 </resources>
