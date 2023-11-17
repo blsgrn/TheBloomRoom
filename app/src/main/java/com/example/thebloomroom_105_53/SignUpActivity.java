@@ -105,6 +105,7 @@ BottomNavigationView bottomNavigationView;
                 Intent intent = new Intent(v.getContext(), LoginActivity.class);
                 // Start the SignupActivity
                 startActivity(intent);
+                overridePendingTransition(0,0);
             }
         });
 

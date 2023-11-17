@@ -80,7 +80,7 @@
         android:layout_below="@id/buttonLogin"
         android:layout_marginTop="16dp"
         android:text="Not a registered customer? Signup"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@android:color/secondary_text_light"
         android:gravity="center"/>
 
     <Button

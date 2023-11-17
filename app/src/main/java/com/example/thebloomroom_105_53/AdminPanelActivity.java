@@ -25,6 +25,7 @@ public class AdminPanelActivity extends AppCompatActivity {
                 Intent intent = new Intent(v.getContext(), AddFlowerActivity.class);
                 // Start the SignupActivity
                 startActivity(intent);
+                overridePendingTransition(0,0);
             }
         });
 
@@ -34,6 +35,7 @@ public class AdminPanelActivity extends AppCompatActivity {
                 Intent intent = new Intent(v.getContext(), FlowerListActivity.class);
                 // Start the SignupActivity
                 startActivity(intent);
+                overridePendingTransition(0,0);
             }
         });
 

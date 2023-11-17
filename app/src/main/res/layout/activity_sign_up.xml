@@ -89,7 +89,7 @@
         android:layout_below="@id/buttonSignup"
         android:layout_marginTop="16dp"
         android:text="Already a registered customer? Login"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@android:color/secondary_text_light"
         android:gravity="center"/>
 
     <Button

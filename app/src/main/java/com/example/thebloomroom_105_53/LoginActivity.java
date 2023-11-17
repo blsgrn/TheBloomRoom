@@ -59,11 +59,13 @@ public class LoginActivity extends AppCompatActivity {
                         // Redirect to AdminPanelActivity -- only admin user will get to access the AdminPanel
                         Intent intent = new Intent(LoginActivity.this, AdminPanelActivity.class);
                         startActivity(intent);
+                        overridePendingTransition(0,0);
                     } else {
                         // Redirect to DashboardActivity -- for all the non-admin users (regular users)
                         Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                         intent.putExtra("USERNAME", username);
                         startActivity(intent);
+                        overridePendingTransition(0,0);
                     }
                     finish(); // Finish the LoginActivity to prevent returning to it
                 } else { //If the login credentials are wrong, an error message will show
@@ -78,6 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                 Intent intent = new Intent(v.getContext(), SignUpActivity.class);
                 // Start the SignupActivity
                 startActivity(intent);
+                overridePendingTransition(0,0);
             }
         });
 

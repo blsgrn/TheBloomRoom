@@ -58,16 +58,6 @@
         android:padding="12dp"
         android:inputType="numberDecimal"/>
 
-<!--    <EditText-->
-<!--        android:id="@+id/editTextCategory"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_below="@id/editTextPrice"-->
-<!--        android:layout_marginTop="16dp"-->
-<!--        android:hint="Category"-->
-<!--        android:background="@drawable/edit_text_background"-->
-<!--        android:padding="12dp"-->
-<!--        android:inputType="text"/>-->
     <Spinner
         android:id="@+id/spinnerCategory"
         android:layout_width="395dp"
