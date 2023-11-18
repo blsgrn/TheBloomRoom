@@ -78,7 +78,7 @@
         android:layout_below="@id/editTextEmail"
         android:layout_marginTop="24dp"
         android:text="Signup"
-        android:background="@drawable/button_background"
+
         android:textColor="@android:color/white"
         android:padding="16dp"/>
 
@@ -99,7 +99,6 @@
         android:layout_below="@id/textViewLogin"
         android:layout_marginTop="8dp"
         android:text="Login"
-        android:background="@drawable/button_background"
         android:textColor="@android:color/white"
         android:padding="16dp"/>
 
