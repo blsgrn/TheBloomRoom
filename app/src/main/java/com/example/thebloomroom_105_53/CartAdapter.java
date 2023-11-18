@@ -32,10 +32,10 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         // Bind data to views in your item layout
         CartItem currentItem = cartItems.get(position);
-        holder.itemNameTextView.setText(currentItem.getName());
-//        holder.itemDescriptionTextView.setText(currentItem.getDescription());
-        holder.itemPriceTextView.setText(String.valueOf(currentItem.getPrice()));
-        holder.itemCategoryTextView.setText(currentItem.getCategory());
+        holder.itemNameTextView.setText("Flower Name: " + currentItem.getName());
+        holder.itemIdTextView.setText("Flower ID: " + currentItem.getItemId());
+        holder.itemPriceTextView.setText(String.valueOf("Price: "+ currentItem.getPrice()));
+        holder.itemCategoryTextView.setText("Category: "+ currentItem.getCategory());
 
     }
 
@@ -47,7 +47,7 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView itemNameTextView;
-        TextView itemDescriptionTextView;
+        TextView itemIdTextView;
         TextView itemPriceTextView;
         TextView itemCategoryTextView;
         // Add more views as needed
@@ -55,7 +55,7 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             itemNameTextView = itemView.findViewById(R.id.itemNameTextView);
-            itemDescriptionTextView = itemView.findViewById(R.id.itemDescriptionTextView);
+            itemIdTextView = itemView.findViewById(R.id.itemIdTextView);
             itemPriceTextView = itemView.findViewById(R.id.itemPriceTextView);
             itemCategoryTextView = itemView.findViewById(R.id.itemCategoryTextView);
             // Initialize other views as needed

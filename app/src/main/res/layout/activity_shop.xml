@@ -15,22 +15,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/logo"
-        android:layout_marginTop="10dp"
-        android:text="Shop"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:id="@+id/txtShop"/>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFlowers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/logo"
         android:padding="16dp"
         android:clipToPadding="false"
         android:scrollbars="vertical" />

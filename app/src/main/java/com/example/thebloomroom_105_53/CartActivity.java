@@ -27,6 +27,6 @@ public class CartActivity extends AppCompatActivity {
     // Retrieve cart items from the database
     private List<CartItem> getCartItemsFromDatabase() {
         DBHelper dbHelper = new DBHelper(this);
-        return dbHelper.getAllCartItems(); // Implement this method in your CartDatabaseHelper
+        return dbHelper.getAllCartItems();
     }
 }
