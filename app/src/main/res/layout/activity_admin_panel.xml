@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="108dp"
-        android:text="View Flowers"
+        android:text="View/Delete "
         app:layout_constraintStart_toStartOf="@+id/imageButtonViewFlowers"
         app:layout_constraintTop_toTopOf="@+id/imageButtonViewFlowers" />
 
