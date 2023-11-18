@@ -17,4 +17,6 @@
     <color name="ripple_color">#827717</color>
     <color name="icon_selected_color">#E6C0CA33</color>
     <color name="icon_default_color">#000</color>
+
+    <color name="edit_text_background">#80CC99</color>
 </resources>

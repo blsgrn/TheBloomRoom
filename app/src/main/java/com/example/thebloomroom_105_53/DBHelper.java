@@ -98,4 +98,10 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return flowerList;
     }
+
+    public void deleteFlower(int flowerId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME2, "flower_id = ?", new String[]{String.valueOf(flowerId)});
+        db.close();
+    }
 }
