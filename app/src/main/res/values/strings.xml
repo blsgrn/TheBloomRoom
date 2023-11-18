@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TheBloomRoom_105_53</string>
     <string name="delete">Delete</string>
+    <string name="add_to_cart">Add To Cart</string>
 </resources>

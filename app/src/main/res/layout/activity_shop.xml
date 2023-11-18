@@ -27,14 +27,13 @@
         android:textColor="@color/black"
         android:id="@+id/txtShop"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello there, I am just practising this app"
-        android:textSize="24sp"
-        android:textColor="@color/black"
-        android:layout_below="@+id/txtShop"
-        android:padding="25dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewFlowers"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
 "
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
