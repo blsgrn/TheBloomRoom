@@ -157,4 +157,19 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    //calculate total of cart items
+    // Method to get the total price of all items in the cart
+    public double getTotalCartPrice() {
+        double total = 0;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT SUM(item_price) FROM " + TABLE_NAME3, null);
+        if (cursor.moveToFirst()) {
+            total = cursor.getDouble(0);
+        }
+        cursor.close();
+        db.close();
+        return total;
+    }
+
+
 }

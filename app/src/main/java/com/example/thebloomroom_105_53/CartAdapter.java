@@ -17,9 +17,16 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
     private List<CartItem> cartItems;
     private LayoutInflater inflater;
 
-    public CartAdapter(Context context, List<CartItem> cartItems) {
+    private OnItemRemovedListener onItemRemovedListener;
+
+    private double removedItemPrice = 0;
+
+
+
+    public CartAdapter(Context context, List<CartItem> cartItems, OnItemRemovedListener listener) {
         this.inflater = LayoutInflater.from(context);
         this.cartItems = cartItems;
+        this.onItemRemovedListener = listener;
     }
 
     @NonNull
@@ -44,13 +51,26 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             public void onClick(View view) {
                 DBHelper dbHelper = new DBHelper(view.getContext());
                 dbHelper.deleteCartItem(currentItem.getItemId());
+
+                // Notify the listener that an item has been removed
+                onItemRemovedListener.onItemRemoved(currentItem.getPrice());
                 // Handle delete button click
                 cartItems.remove(currentPosition);
                 notifyItemRemoved(currentPosition);
             }
         });
 
+
+
     }
+    public double getRemovedItemPrice() {
+        return removedItemPrice;
+    }
+    public interface OnItemRemovedListener {
+        void onItemRemoved(double removedItemPrice);
+    }
+
+
 
     @Override
     public int getItemCount() {
@@ -77,4 +97,7 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             // Initialize other views as needed
         }
     }
+
+
+
 }
