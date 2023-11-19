@@ -65,7 +65,7 @@ public class AddFlowerActivity extends AppCompatActivity {
                 String category = spinnerCategory.getSelectedItem().toString();
                 String imageFilename = editTextImageFilename.getText().toString().trim();
 
-                int maxDescriptionLength = 100;
+                int maxDescriptionLength = 200;
 
                 if (flowerName.isEmpty() || description.isEmpty() || priceText.isEmpty() || category.isEmpty() || imageFilename.isEmpty()) {
                     textViewError.setText("Please fill in all fields.");

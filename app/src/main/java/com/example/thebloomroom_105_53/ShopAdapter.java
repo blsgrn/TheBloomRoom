@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -41,6 +42,18 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.FlowerViewHold
         holder.textViewFlowerCategory.setText("Category: " + flower.getCategory());
         holder.textViewFlowerImageFilename.setText("Image Filename: " + flower.getImageFilename());
 
+        // Get the resource ID of the flower image dynamically
+        int resourceId = context.getResources().getIdentifier(flower.getImageFilename(), "drawable", context.getPackageName());
+
+        // Check if the resource ID is valid
+        if (resourceId != 0) {
+            holder.imageViewFlower.setImageResource(resourceId);
+        } else {
+            // If the resource is not found, you can set a default image or handle it accordingly
+            holder.imageViewFlower.setImageResource(R.drawable.no_image);
+        }
+
+
         final int currentPosition = position;
 
         holder.btnAddToCart.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +89,9 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.FlowerViewHold
 
     public class FlowerViewHolder extends RecyclerView.ViewHolder {
         TextView textViewFlowerId, textViewFlowerName, textViewFlowerDescription, textViewFlowerPrice, textViewFlowerCategory, textViewFlowerImageFilename;
-        ImageButton btnDeleteFlower, btnAddToCart;
+        ImageView imageViewFlower;
+        ImageButton btnAddToCart;
+
 
         public FlowerViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -87,6 +102,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.FlowerViewHold
             textViewFlowerCategory = itemView.findViewById(R.id.textViewFlowerCategory);
             textViewFlowerImageFilename = itemView.findViewById(R.id.textViewImageFilename);
 
+            imageViewFlower = itemView.findViewById(R.id.imageViewFlower);
             btnAddToCart = itemView.findViewById(R.id.btnAddToCart);
         }
     }
