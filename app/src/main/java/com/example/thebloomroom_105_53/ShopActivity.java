@@ -73,7 +73,7 @@ public class ShopActivity extends AppCompatActivity {
                         startActivity(intent);
                         overridePendingTransition(0, 0);
                     } else {
-                        Toast.makeText(ShopActivity.this, "Please login to add to cart!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ShopActivity.this, "Please login to view cart!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(v.getContext(), LoginActivity.class);
                         startActivity(intent);
                         overridePendingTransition(0, 0);
