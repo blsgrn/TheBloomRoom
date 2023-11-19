@@ -6,8 +6,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -19,6 +24,9 @@ public class ShopActivity extends AppCompatActivity {
     private RecyclerView recyclerViewFlowers;
     private ShopAdapter shopAdapter;
     private List<Flower> flowerList;
+    private TextView textViewLogin;
+
+    private Button buttonViewCart;
     BottomNavigationView bottomNavigationView;
 
 
@@ -37,11 +45,43 @@ public class ShopActivity extends AppCompatActivity {
         recyclerViewFlowers.setLayoutManager(new LinearLayoutManager(this));
         recyclerViewFlowers.setAdapter(shopAdapter);
 
+        //view cart button
+        buttonViewCart = findViewById(R.id.buttonViewCart);
+        textViewLogin = findViewById(R.id.textViewLogin);
 
 
         //bottom navigation
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.shop);
+
+        // In any other activity where you want to access the username
+        SharedPreferences preferences = getSharedPreferences("user_credentials", MODE_PRIVATE);
+        String username = preferences.getString("username", "Please Login!");
+
+        // Display the username in the TextView
+        String hiMessage = "Hi" + username + "!";
+        textViewLogin.setText(hiMessage);
+
+
+
+            buttonViewCart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (!"Please Login!".equals(username)){
+                        Intent intent = new Intent(v.getContext(), CartActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(0, 0);
+                    } else {
+                        Toast.makeText(ShopActivity.this, "Please login to add to cart!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(v.getContext(), LoginActivity.class);
+                        startActivity(intent);
+                        overridePendingTransition(0, 0);
+                    }
+
+                }
+            });
+
+
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -50,7 +90,7 @@ public class ShopActivity extends AppCompatActivity {
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
                     overridePendingTransition(0,0);
                     return true;
-                } else if(item.getItemId()== R.id.login){
+                } else if(item.getItemId()== R.id.dashboard){
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                     overridePendingTransition(0,0);
                     return true;

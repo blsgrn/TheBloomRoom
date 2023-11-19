@@ -150,4 +150,11 @@ public class DBHelper extends SQLiteOpenHelper {
         return cartItemList;
     }
 
+    //delete from cart
+    public void deleteCartItem(int itemId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME3, "item_id = ?", new String[]{String.valueOf(itemId)});
+        db.close();
+    }
+
 }

@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -41,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
         //bottom navigation
         bottomNavigationView = findViewById(R.id.bottom_navigator);
-        bottomNavigationView.setSelectedItemId(R.id.login);
+        bottomNavigationView.setSelectedItemId(R.id.dashboard);
 
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +67,13 @@ public class LoginActivity extends AppCompatActivity {
                         intent.putExtra("USERNAME", username);
                         startActivity(intent);
                         overridePendingTransition(0,0);
+
+                        // In your LoginActivity or wherever you handle the login
+                        SharedPreferences preferences = getSharedPreferences("user_credentials", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = preferences.edit();
+                        editor.putString("username", username);
+                        editor.apply();
+
                     }
                     finish(); // Finish the LoginActivity to prevent returning to it
                 } else { //If the login credentials are wrong, an error message will show

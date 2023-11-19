@@ -113,7 +113,7 @@ BottomNavigationView bottomNavigationView;
         //bottom navigation
 
         bottomNavigationView = findViewById(R.id.bottom_navigator);
-        bottomNavigationView.setSelectedItemId(R.id.login);
+        bottomNavigationView.setSelectedItemId(R.id.dashboard);
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

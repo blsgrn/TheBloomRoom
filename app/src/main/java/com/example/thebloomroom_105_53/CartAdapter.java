@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,6 +38,18 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         holder.itemPriceTextView.setText(String.valueOf("Price: "+ currentItem.getPrice()));
         holder.itemCategoryTextView.setText("Category: "+ currentItem.getCategory());
 
+        final int currentPosition = position;
+        holder.btnRemoveItem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DBHelper dbHelper = new DBHelper(view.getContext());
+                dbHelper.deleteCartItem(currentItem.getItemId());
+                // Handle delete button click
+                cartItems.remove(currentPosition);
+                notifyItemRemoved(currentPosition);
+            }
+        });
+
     }
 
     @Override
@@ -50,6 +63,8 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         TextView itemIdTextView;
         TextView itemPriceTextView;
         TextView itemCategoryTextView;
+
+        ImageButton btnRemoveItem;
         // Add more views as needed
 
         public ViewHolder(@NonNull View itemView) {
@@ -58,6 +73,7 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             itemIdTextView = itemView.findViewById(R.id.itemIdTextView);
             itemPriceTextView = itemView.findViewById(R.id.itemPriceTextView);
             itemCategoryTextView = itemView.findViewById(R.id.itemCategoryTextView);
+            btnRemoveItem = itemView.findViewById(R.id.btnRemoveItem);
             // Initialize other views as needed
         }
     }

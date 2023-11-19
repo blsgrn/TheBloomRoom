@@ -67,7 +67,7 @@ public class FlowerListAdapter extends RecyclerView.Adapter<FlowerListAdapter.Fl
 
     public class FlowerViewHolder extends RecyclerView.ViewHolder {
         TextView textViewFlowerId, textViewFlowerName, textViewFlowerDescription, textViewFlowerPrice, textViewFlowerCategory, textViewFlowerImageFilename;
-        ImageButton btnDeleteFlower, btnAddToCart;
+        ImageButton btnDeleteFlower;
         public FlowerViewHolder(@NonNull View itemView) {
             super(itemView);
             textViewFlowerId = itemView.findViewById(R.id.textViewFlowerId);

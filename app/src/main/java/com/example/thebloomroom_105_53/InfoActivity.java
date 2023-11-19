@@ -27,7 +27,7 @@ BottomNavigationView bottomNavigationView;
                     startActivity(new Intent(getApplicationContext(), ShopActivity.class));
                     overridePendingTransition(0,0);
                     return true;
-                } else if(item.getItemId()== R.id.login){
+                } else if(item.getItemId()== R.id.dashboard){
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                     overridePendingTransition(0,0);
                     return true;

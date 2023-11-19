@@ -15,15 +15,33 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"/>
 
+    "
+
+
+    <Button
+        android:id="@+id/buttonViewCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="10dp"
+        android:text="View Cart" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewFlowers"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/logo"
-        android:padding="16dp"
+        android:layout_below="@id/buttonViewCart"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="0dp"
         android:clipToPadding="false"
-        android:scrollbars="vertical" />
-"
+        android:padding="16dp"
+        android:scrollbars="vertical">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
@@ -36,5 +54,15 @@
         app:labelVisibilityMode="labeled"
         app:menu="@menu/menu"
         android:layout_alignParentBottom="true"/>
+
+    <TextView
+        android:id="@+id/textViewLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="169dp"
+        android:layout_marginEnd="325dp"
+        android:text="Login to view cart.." />
 
 </RelativeLayout>

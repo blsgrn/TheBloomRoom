@@ -50,11 +50,25 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
         android:text="View/Delete"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButtonAddFlower2"
-        app:layout_constraintEnd_toEndOf="@+id/imageButtonAddFlower2"
-        app:layout_constraintHorizontal_bias="0.545"
-        app:layout_constraintStart_toStartOf="@+id/imageButtonAddFlower2"
-        app:layout_constraintTop_toTopOf="@+id/imageButtonAddFlower2"
-        app:layout_constraintVertical_bias="0.887" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageButtonViewCartItems"
+        app:layout_constraintEnd_toEndOf="@+id/imageButtonViewCartItems"
+        app:layout_constraintHorizontal_bias="0.472"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonViewCartItems" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/icon_selected_color"
+        app:itemIconSize="36dp"
+        app:itemIconTint="@color/primary_3"
+        app:itemTextColor="@color/primary_3"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>
