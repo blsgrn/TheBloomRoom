@@ -27,10 +27,18 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
         imageButtonViewCartItems = findViewById(R.id.imageButtonViewCartItems);
+        textViewWelcome = findViewById(R.id.textViewWelcome);
 
         //bottom navigation
         bottomNavigationView = findViewById(R.id.bottom_navigator);
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.dashboard);
+
+        SharedPreferences preferences = getSharedPreferences("user_credentials", MODE_PRIVATE);
+        String username = preferences.getString("username", "Please Login!");
+
+        // Display the username in the TextView
+        String hiMessage = "Hi" + username + "!";
+        textViewWelcome.setText(hiMessage);
 
         imageButtonViewCartItems.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,16 +50,8 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-        textViewWelcome = findViewById(R.id.textViewWelcome);
-        // Retrieve username from Intent
-        Intent intent = getIntent();
-        if (intent != null && intent.hasExtra("USERNAME")) {
-            String username = intent.getStringExtra("USERNAME");
 
-            // Display the username in the TextView
-            String welcomeMessage = "Username: " + username;
-            textViewWelcome.setText(welcomeMessage);
-        }
+
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override

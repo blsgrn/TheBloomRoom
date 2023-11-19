@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -21,6 +22,10 @@ BottomNavigationView bottomNavigationView;
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.home);
 
+        // In any other activity where you want to access the username
+        SharedPreferences preferences = getSharedPreferences("user_credentials", MODE_PRIVATE);
+        String username = preferences.getString("username", "Please Login!");
+
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -29,8 +34,13 @@ BottomNavigationView bottomNavigationView;
                     overridePendingTransition(0,0);
                     return true;
                 } else if(item.getItemId()== R.id.dashboard){
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                    overridePendingTransition(0,0);
+                    if (!"Please Login!".equals(username)){
+                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                        overridePendingTransition(0,0);
+                    } else {
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                        overridePendingTransition(0,0);
+                    }
                     return true;
                 } else if(item.getItemId()==R.id.info){
                     startActivity(new Intent(getApplicationContext(), InfoActivity.class));

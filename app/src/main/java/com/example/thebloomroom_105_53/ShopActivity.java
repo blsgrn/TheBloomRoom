@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -91,8 +92,14 @@ public class ShopActivity extends AppCompatActivity {
                     overridePendingTransition(0,0);
                     return true;
                 } else if(item.getItemId()== R.id.dashboard){
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                    overridePendingTransition(0,0);
+                    //logged in status based on shared preferences
+                    if (!"Please Login!".equals(username)){
+                        startActivity(new Intent(getApplicationContext(), DashboardActivity.class));
+                        overridePendingTransition(0,0);
+                    } else {
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                        overridePendingTransition(0,0);
+                    }
                     return true;
                 } else if(item.getItemId()==R.id.info){
                     startActivity(new Intent(getApplicationContext(), InfoActivity.class));
