@@ -50,6 +50,15 @@ public class AdminPanelActivity extends AppCompatActivity {
             }
         });
 
+        imageButtonAccounts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), AccountListActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0,0);
+            }
+        });
+
 
     }
 }

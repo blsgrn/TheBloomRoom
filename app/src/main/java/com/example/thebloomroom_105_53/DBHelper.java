@@ -146,6 +146,32 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    //users
+    public List<UserAccount> getAllUsers() {
+        List<UserAccount> userList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME1, null);
+
+        while (cursor.moveToNext()) {
+
+            int userId = cursor.getInt(cursor.getColumnIndex("user_id"));
+            String username = cursor.getString(cursor.getColumnIndex("username"));
+            String email = cursor.getString(cursor.getColumnIndex("email"));
+
+
+            UserAccount user = new UserAccount(userId, username, email);
+            userList.add(user);
+
+
+        }
+
+        cursor.close();
+        db.close();
+
+        return userList;
+    }
+
     //add to cart
     public long addToCart(int itemId, String itemName, double itemPrice, String itemCategory) {
         SQLiteDatabase db = this.getWritableDatabase();
