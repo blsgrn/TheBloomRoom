@@ -39,7 +39,16 @@ public class ShopActivity extends AppCompatActivity {
         recyclerViewFlowers = findViewById(R.id.recyclerViewFlowers);
         flowerList = new ArrayList<>();
 
-        fetchFlowersFromDatabase();
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("selectedCategory")) {
+            String selectedCategory = intent.getStringExtra("selectedCategory");
+
+            // Fetch flowers based on the selected category
+            fetchFlowersFromDatabase(selectedCategory);
+        } else {
+            // Fetch all flowers if no category is selected
+            fetchFlowersFromDatabase();
+        }
 
         // Set up RecyclerView
         shopAdapter = new ShopAdapter(flowerList, this);
@@ -116,5 +125,9 @@ public class ShopActivity extends AppCompatActivity {
     private void fetchFlowersFromDatabase() {
         DBHelper dbHelper = new DBHelper(this);
         flowerList = dbHelper.getAllFlowers();
+    }
+    private void fetchFlowersFromDatabase(String selectedCategory) {
+        DBHelper dbHelper = new DBHelper(this);
+        flowerList = dbHelper.getFlowersByCategory(selectedCategory);
     }
 }

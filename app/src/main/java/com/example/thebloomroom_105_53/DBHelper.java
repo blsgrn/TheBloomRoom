@@ -109,6 +109,37 @@ public class DBHelper extends SQLiteOpenHelper {
         return flowerList;
     }
 
+    // get flowers based on category
+
+    public List<Flower> getFlowersByCategory(String category) {
+        List<Flower> flowerList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] columns = {"flower_id", "name", "description", "price", "category", "image_filename"};
+        String selection = "category=?";
+        String[] selectionArgs = {category};
+
+        Cursor cursor = db.query(TABLE_NAME2, columns, selection, selectionArgs, null, null, null);
+
+        while (cursor.moveToNext()) {
+            int flowerId = cursor.getInt(cursor.getColumnIndex("flower_id"));
+            String name = cursor.getString(cursor.getColumnIndex("name"));
+            String description = cursor.getString(cursor.getColumnIndex("description"));
+            double price = cursor.getDouble(cursor.getColumnIndex("price"));
+            String categoryFromCursor = cursor.getString(cursor.getColumnIndex("category"));  // Rename the variable here
+            String imageFilename = cursor.getString(cursor.getColumnIndex("image_filename"));
+
+            Flower flower = new Flower(flowerId, name, description, price, categoryFromCursor, imageFilename);
+            flowerList.add(flower);
+        }
+
+        cursor.close();
+        db.close();
+
+        return flowerList;
+    }
+
+
     public void deleteFlower(int flowerId) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_NAME2, "flower_id = ?", new String[]{String.valueOf(flowerId)});
