@@ -60,7 +60,7 @@ public class ShopActivity extends AppCompatActivity {
         String username = preferences.getString("username", "Please Login!");
 
         // Display the username in the TextView
-        String hiMessage = "Hi" + username + "!";
+        String hiMessage = "Hi " + username + "!";
         textViewLogin.setText(hiMessage);
 
 

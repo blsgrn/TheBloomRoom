@@ -226,7 +226,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private void insertDefaultUsers(SQLiteDatabase db) {
         // Insert user: john
-        db.execSQL("INSERT INTO " + TABLE_NAME1 + " (username, password, email) VALUES ('student', 'student123', 'john@example.com');");
+        db.execSQL("INSERT INTO " + TABLE_NAME1 + " (username, password, email) VALUES ('user', 'user123', 'john@example.com');");
 
         // Insert user: admin
         db.execSQL("INSERT INTO " + TABLE_NAME1 + " (username, password, email) VALUES ('admin', 'admin123', 'admin@example.com');");
