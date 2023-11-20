@@ -9,6 +9,19 @@
 
     <!-- Inside activity_dashboard.xml -->
 
+    <ImageButton
+        android:id="@+id/imageButtonViewPaymentRecords"
+        android:layout_width="132dp"
+        android:layout_height="143dp"
+        android:background="@color/secondary_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.409"
+        app:srcCompat="@drawable/payment_record_list" />
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="120dp"
@@ -84,4 +97,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:text=" Payment History"
+        app:layout_constraintEnd_toEndOf="@+id/imageButtonViewPaymentRecords"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonViewPaymentRecords"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonViewPaymentRecords" />
 </androidx.constraintlayout.widget.ConstraintLayout>

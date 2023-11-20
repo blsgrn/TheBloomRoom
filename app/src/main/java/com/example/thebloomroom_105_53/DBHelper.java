@@ -57,6 +57,10 @@ public class DBHelper extends SQLiteOpenHelper {
             db.execSQL(CREATE_FLOWERS_TABLE);
             db.execSQL(CREATE_CART_TABLE);
             db.execSQL(CREATE_PAYMENT_RECORD_TABLE);
+
+            //inserting default data into tables
+            insertDefaultFlowers(db);
+            insertDefaultUsers(db);
             // Add log statements to check if tables are created successfully
             Log.d("DBHelper", "Tables created successfully");
         } catch (Exception e) {
@@ -179,7 +183,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     //methods for payment_records table
     public List<PaymentRecord> getAllPaymentRecords() {
-        List<PaymentRecord> paymentRecordsList = new ArrayList<>();
+        List<PaymentRecord> paymentRecordList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME4, null);
@@ -191,13 +195,13 @@ public class DBHelper extends SQLiteOpenHelper {
             String method = cursor.getString(cursor.getColumnIndex("method"));
 
             PaymentRecord paymentRecord = new PaymentRecord(receiptNo, customer, total, method);
-            paymentRecordsList.add(paymentRecord);
+            paymentRecordList.add(paymentRecord);
         }
 
         cursor.close();
         db.close();
 
-        return paymentRecordsList;
+        return paymentRecordList;
     }
 
     public long insertPaymentRecord(String customer, double total, String method) {
@@ -216,7 +220,81 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return newRowId;
     }
+/*NOTE: I am inserting default records (for users table and flowers table) for demonstration purpose only.
+ Data must be inserted into tables using the app. */
 
+
+    private void insertDefaultUsers(SQLiteDatabase db) {
+        // Insert user: john
+        db.execSQL("INSERT INTO " + TABLE_NAME1 + " (username, password, email) VALUES ('john', 'john123', 'john@example.com');");
+
+        // Insert user: admin
+        db.execSQL("INSERT INTO " + TABLE_NAME1 + " (username, password, email) VALUES ('admin', 'admin123', 'admin@example.com');");
+    }
+
+    private void insertDefaultFlowers(SQLiteDatabase db) {
+    String[] flowerNames = {
+            "Red Roses", "Pink Delight Roses",
+            "White Calla Lily", "Stargazer Lily",
+            "Phalaenopsis Orchid", "Dendrobium Orchid",
+            "Spring Tulips", "Autumn Sunflowers",
+            "Rainbow Bouquet", "Pastel Harmony Mix",
+            "Blue Mystique Rose", "Golden Anniversary Orchid"
+    };
+
+    String[] descriptions = {
+            "Red roses symbolize love and passion. Their vibrant color and enchanting fragrance make them a perfect expression of romantic feelings.",
+            "Pink roses convey admiration and gratitude. This delightful shade adds a touch of elegance to any occasion, expressing appreciation and sweetness.",
+            "White calla lilies represent purity and innocence. Their simple yet sophisticated beauty makes them a classic choice for weddings and celebrations.",
+            "Stargazer lilies symbolize prosperity and success. With their bold, upward-facing blooms and captivating fragrance, they make a statement in any arrangement.",
+            "Phalaenopsis orchids exude grace and beauty. Known for their long-lasting flowers, they add a touch of luxury to any space.",
+            "Dendrobium orchids symbolize strength and endurance. Their vibrant colors and unique shape create an exotic and captivating display.",
+            "Spring tulips herald the arrival of a new season with their vibrant colors. They bring joy and freshness to any springtime celebration.",
+            "Autumn sunflowers capture the warmth of the season. Their golden petals evoke the beauty of fall, making them a perfect choice for autumn bouquets.",
+            "A rainbow bouquet features an assortment of vibrant blooms, symbolizing diversity and celebration. It's a colorful expression of joy and positivity.",
+            "The pastel harmony mix combines soft hues for a serene and elegant arrangement. This blend of colors creates a soothing and delightful visual experience.",
+            "The blue mystique rose is a rare and enchanting flower. Its deep blue petals symbolize mystery and the unattainable, making it a truly special gift.",
+            "The golden anniversary orchid represents 50 years of love and commitment. With its golden blooms, it's a stunning choice to celebrate a milestone anniversary."
+    };
+
+    double[] prices = {
+            12.99, 14.99,
+            18.99, 22.99,
+            25.99, 21.99,
+            15.99, 17.99,
+            29.99, 26.99,
+            35.99, 42.99
+    };
+
+    String[] categories = {
+            "Rose", "Rose",
+            "Lily", "Lily",
+            "Orchid", "Orchid",
+            "Seasonal", "Seasonal",
+            "Mixed", "Mixed",
+            "Special", "Special"
+    };
+
+    String[] imageFileNames = {
+            "red_roses", "pink_delight_roses",
+            "white_calla_lily", "stargazer_lily",
+            "phalaenopsis_orchid", "dendrobium_orchid",
+            "spring_tulips", "autumn_sunflowers",
+            "rainbow_bouquet", "pastel_harmony_mix",
+            "blue_mystique_rose", "golden_anniversary_orchid"
+    };
+    for (int i = 0; i < flowerNames.length; i++) {
+        ContentValues values = new ContentValues();
+        values.put("name", flowerNames[i]);
+        values.put("description", descriptions[i]);
+        values.put("price", prices[i]);
+        values.put("category", categories[i]);
+        values.put("image_filename", imageFileNames[i]);
+
+        // Insert data into the flowers table
+        db.insert(TABLE_NAME2, null, values);
+    }
+}
 
 
 }
