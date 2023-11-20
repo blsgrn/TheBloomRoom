@@ -226,7 +226,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     private void insertDefaultUsers(SQLiteDatabase db) {
         // Insert user: john
-        db.execSQL("INSERT INTO " + TABLE_NAME1 + " (username, password, email) VALUES ('john', 'john123', 'john@example.com');");
+        db.execSQL("INSERT INTO " + TABLE_NAME1 + " (username, password, email) VALUES ('student', 'student123', 'john@example.com');");
 
         // Insert user: admin
         db.execSQL("INSERT INTO " + TABLE_NAME1 + " (username, password, email) VALUES ('admin', 'admin123', 'admin@example.com');");
@@ -258,12 +258,12 @@ public class DBHelper extends SQLiteOpenHelper {
     };
 
     double[] prices = {
-            12.99, 14.99,
-            18.99, 22.99,
-            25.99, 21.99,
-            15.99, 17.99,
-            29.99, 26.99,
-            35.99, 42.99
+            1299, 1499,
+            1899, 2299,
+            2599, 2199,
+            1599, 1799,
+            2999, 2699,
+            3599, 4299
     };
 
     String[] categories = {

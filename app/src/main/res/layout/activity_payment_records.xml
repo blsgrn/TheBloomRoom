@@ -32,7 +32,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="172dp"
-        android:text="Payment Records"
+        android:text="Payment History"
         android:textSize="24sp" />
 
 </RelativeLayout>
