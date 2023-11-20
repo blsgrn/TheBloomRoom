@@ -7,6 +7,28 @@
     android:background="@drawable/admin_bg"
     tools:context=".AdminPanelActivity">
 
+    <ImageButton
+        android:id="@+id/imageButtonReceipt"
+        android:layout_width="132dp"
+        android:layout_height="143dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="252dp"
+        android:background="@color/secondary_1"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/receipt" />
+
+    <ImageButton
+        android:id="@+id/imageButtonAccounts"
+        android:layout_width="132dp"
+        android:layout_height="143dp"
+        android:layout_marginTop="252dp"
+        android:layout_marginEnd="80dp"
+        android:background="@color/secondary_1"
+        app:layout_constraintEnd_toEndOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:srcCompat="@drawable/users" />
+
     <ImageView
         android:id="@+id/logo"
         android:layout_width="120dp"
@@ -37,7 +59,7 @@
         android:id="@+id/imageButtonAddFlower"
         android:layout_width="132dp"
         android:layout_height="143dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="76dp"
         android:layout_marginEnd="80dp"
         android:background="@color/secondary_1"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
@@ -60,7 +82,7 @@
         android:layout_width="132dp"
         android:layout_height="143dp"
         android:layout_marginStart="80dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="76dp"
         android:background="@color/secondary_1"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
@@ -75,6 +97,28 @@
         android:text="View/Delete "
         app:layout_constraintStart_toStartOf="@+id/imageButtonViewFlowers"
         app:layout_constraintTop_toTopOf="@+id/imageButtonViewFlowers" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:text="View Accounts"
+        app:layout_constraintEnd_toEndOf="@+id/imageButtonAccounts"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonAccounts"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonAccounts" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:text="Payment Records"
+        app:layout_constraintEnd_toEndOf="@+id/imageButtonReceipt"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="@+id/imageButtonReceipt"
+        app:layout_constraintTop_toTopOf="@+id/imageButtonReceipt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
