@@ -19,6 +19,7 @@ public class DashboardActivity extends AppCompatActivity {
     private TextView textViewWelcome;
     ImageButton imageButtonViewCartItems;
     ImageButton imageButtonViewPaymentRecords;
+    ImageButton imageButtonShop;
 
     //bottom navigation
     BottomNavigationView bottomNavigationView;
@@ -30,6 +31,7 @@ public class DashboardActivity extends AppCompatActivity {
         imageButtonViewCartItems = findViewById(R.id.imageButtonViewCartItems);
         textViewWelcome = findViewById(R.id.textViewWelcome);
         imageButtonViewPaymentRecords = findViewById(R.id.imageButtonViewPaymentRecords);
+        imageButtonShop = findViewById(R.id.imageButtonViewShop);
 
         //bottom navigation
         bottomNavigationView = findViewById(R.id.bottom_navigator);
@@ -61,7 +63,15 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-
+        imageButtonShop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ShopActivity.class);
+                // Start the SignupActivity
+                startActivity(intent);
+                overridePendingTransition(0,0);
+            }
+        });
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
