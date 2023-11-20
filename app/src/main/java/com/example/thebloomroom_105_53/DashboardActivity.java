@@ -20,6 +20,7 @@ public class DashboardActivity extends AppCompatActivity {
     ImageButton imageButtonViewCartItems;
     ImageButton imageButtonViewPaymentRecords;
     ImageButton imageButtonShop;
+    ImageButton imageButtonCategories;
 
     //bottom navigation
     BottomNavigationView bottomNavigationView;
@@ -32,6 +33,7 @@ public class DashboardActivity extends AppCompatActivity {
         textViewWelcome = findViewById(R.id.textViewWelcome);
         imageButtonViewPaymentRecords = findViewById(R.id.imageButtonViewPaymentRecords);
         imageButtonShop = findViewById(R.id.imageButtonViewShop);
+        imageButtonCategories = findViewById(R.id.imageButtonCategories);
 
         //bottom navigation
         bottomNavigationView = findViewById(R.id.bottom_navigator);
@@ -67,6 +69,16 @@ public class DashboardActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), ShopActivity.class);
+                // Start the SignupActivity
+                startActivity(intent);
+                overridePendingTransition(0,0);
+            }
+        });
+
+        imageButtonCategories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), CategoriesActivity.class);
                 // Start the SignupActivity
                 startActivity(intent);
                 overridePendingTransition(0,0);
