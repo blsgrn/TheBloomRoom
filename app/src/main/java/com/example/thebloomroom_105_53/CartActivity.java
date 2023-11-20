@@ -1,6 +1,9 @@
 package com.example.thebloomroom_105_53;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +17,8 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnIte
 
     private TextView textViewTotal;
 
+    Button buttonProcessPay;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +29,8 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnIte
 
         textViewTotal = findViewById(R.id.textViewTotal);
 
+        buttonProcessPay = findViewById(R.id.buttonProcessPay);
+
         // Initialize your adapter and set it to the RecyclerView
         List<CartItem> cartItems = getCartItemsFromDatabase();
         double initialTotal = calculateUpdatedTotal();
@@ -33,6 +40,17 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnIte
         recyclerView.setAdapter(cartAdapter);
 
         calculateUpdatedTotal();
+
+        buttonProcessPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                double totalAmount = calculateUpdatedTotal(); // Assuming calculateUpdatedTotal() returns the total amount
+                Intent intent = new Intent(v.getContext(), PaymentActivity.class);
+                intent.putExtra("TOTAL_AMOUNT", totalAmount); // Use a key to identify the data in PaymentActivity
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
     }
     @Override
     public void onItemRemoved(double removedItemPrice) {

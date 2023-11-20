@@ -55,5 +55,4 @@
         android:src="@drawable/delete_button"
         android:contentDescription="@string/delete"/>
 
-
 </LinearLayout>

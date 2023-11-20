@@ -21,6 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String TABLE_NAME2 = "flowers";
 
     public static final String TABLE_NAME3 = "cart";
+    public static final String TABLE_NAME4 = "payment_records";
 
 
 
@@ -40,7 +41,9 @@ public class DBHelper extends SQLiteOpenHelper {
             " (cart_id INTEGER PRIMARY KEY AUTOINCREMENT, item_id INT, item_name TEXT, item_price REAL, item_category TEXT);";
 
 
-
+    private static final String CREATE_PAYMENT_RECORD_TABLE = "create table " +
+            TABLE_NAME4 +
+            "(receipt_no INTEGER PRIMARY KEY AUTOINCREMENT, customer TEXT, total REAL, method TEXT);";
 
     public DBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -53,6 +56,7 @@ public class DBHelper extends SQLiteOpenHelper {
             db.execSQL(CREATE_USERS_TABLE);
             db.execSQL(CREATE_FLOWERS_TABLE);
             db.execSQL(CREATE_CART_TABLE);
+            db.execSQL(CREATE_PAYMENT_RECORD_TABLE);
             // Add log statements to check if tables are created successfully
             Log.d("DBHelper", "Tables created successfully");
         } catch (Exception e) {
@@ -67,7 +71,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS users");
         db.execSQL("DROP TABLE IF EXISTS flowers");
         db.execSQL("DROP TABLE IF EXISTS cart ");
-
+        db.execSQL("DROP TABLE IF EXISTS payment_records");
 
         // Create a new table with the updated schema
         onCreate(db);
@@ -169,7 +173,50 @@ public class DBHelper extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return total;
+
+
     }
+
+    //methods for payment_records table
+    public List<PaymentRecord> getAllPaymentRecords() {
+        List<PaymentRecord> paymentRecordsList = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME4, null);
+
+        while (cursor.moveToNext()) {
+            int receiptNo = cursor.getInt(cursor.getColumnIndex("receipt_no"));
+            String customer = cursor.getString(cursor.getColumnIndex("customer"));
+            double total = cursor.getDouble(cursor.getColumnIndex("total"));
+            String method = cursor.getString(cursor.getColumnIndex("method"));
+
+            PaymentRecord paymentRecord = new PaymentRecord(receiptNo, customer, total, method);
+            paymentRecordsList.add(paymentRecord);
+        }
+
+        cursor.close();
+        db.close();
+
+        return paymentRecordsList;
+    }
+
+    public long insertPaymentRecord(String customer, double total, String method) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("customer", customer);
+        values.put("total", total);
+        values.put("method", method);
+
+        // Insert data into the payment_records database
+        long newRowId = db.insert(TABLE_NAME4, null, values);
+
+        // Close the database connection
+        db.close();
+
+        return newRowId;
+    }
+
 
 
 }

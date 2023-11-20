@@ -13,6 +13,15 @@
         android:theme="@style/Theme.TheBloomRoom_105_53"
         tools:targetApi="31">
         <activity
+            android:name=".PaymentMessageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentMessage"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="false" />
+        <activity
             android:name=".CartActivity"
             android:exported="false" />
         <activity
