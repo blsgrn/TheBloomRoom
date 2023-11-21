@@ -32,6 +32,8 @@
         android:layout_below="@+id/textViewError"
         android:layout_marginTop="16dp"
         android:hint="Flower Name"
+        android:textColorHint="@color/secondary_2"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/edit_text_background"
         android:padding="12dp"
         android:inputType="text"/>
@@ -43,6 +45,8 @@
         android:layout_below="@id/editTextName"
         android:layout_marginTop="16dp"
         android:hint="Description"
+        android:textColorHint="@color/secondary_2"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/edit_text_background"
         android:padding="12dp"
         android:inputType="text"/>
@@ -54,6 +58,8 @@
         android:layout_below="@id/editTextDescription"
         android:layout_marginTop="16dp"
         android:hint="Price"
+        android:textColorHint="@color/secondary_2"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/edit_text_background"
         android:padding="12dp"
         android:inputType="numberDecimal"/>
@@ -63,10 +69,10 @@
         android:layout_width="395dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextPrice"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/edit_text_background"
+        android:layout_marginEnd="20dp"
+        android:theme="@style/SpinnerTheme"
         android:minHeight="48dp"
         android:padding="12dp" />
 
@@ -77,6 +83,8 @@
         android:layout_below="@id/spinnerCategory"
         android:layout_marginTop="16dp"
         android:hint="filename (eg: english_rose)"
+        android:textColorHint="@color/secondary_2"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/edit_text_background"
         android:padding="12dp"
         android:inputType="text"/>
@@ -88,6 +96,7 @@
         android:layout_below="@id/editTextImageFilename"
         android:layout_marginTop="24dp"
         android:text="Add Flower"
+        android:layout_marginHorizontal="20dp"
         android:textColor="@android:color/white"
         android:padding="16dp"/>
 
