@@ -76,7 +76,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Visa Card"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:checked="true"/>
 
         <RadioButton
             android:id="@+id/radioButton2"

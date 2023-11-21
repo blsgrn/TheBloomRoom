@@ -16,13 +16,112 @@
         android:layout_marginTop="32dp"/>
 
     <TextView
+        android:id="@+id/textViewAboutUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logo"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:text="About Us"
+        android:textColor="@color/secondary_2"
+        android:textSize="32dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/textViewAboutContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to The Bloom Room, your go-to destination for a seamless shopping experience. Here's a little about us:"
+        android:lineSpacingMultiplier="1.2"
+        android:layout_below="@id/textViewAboutUs"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewMissionTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Our Mission"
+        android:layout_below="@id/textViewAboutContent"
+        android:textColor="@color/secondary_3"
+        android:layout_marginHorizontal="20dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+    <TextView
+        android:id="@+id/textViewMissionContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="At The Bloom Room, our mission is to a diverse range of high-quality products and exceptional customer service."
+        android:lineSpacingMultiplier="1.2"
+        android:layout_below="@id/textViewMissionTitle"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        android:id="@+id/textViewContactUsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contact Us"
+        android:layout_below="@id/textViewMissionContent"
+        android:layout_marginHorizontal="20dp"
+        android:textColor="@color/secondary_3"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+    <TextView
+        android:id="@+id/textViewContactEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email Address: thebloomroom@example.com"
+        android:layout_below="@id/textViewContactUsTitle"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        android:id="@+id/textViewContactTel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phone Number: 0117654321"
+        android:layout_below="@id/textViewContactEmail"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="16dp"/>
+    <TextView
+        android:id="@+id/textViewFacebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Social Media: www.facebook.com"
+        android:layout_below="@id/textViewContactTel"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="16dp"/>
+
+
+    <ImageButton
+        android:id="@+id/imageButtonEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Info"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"
-        android:textColor="@color/black"/>
+        android:layout_above="@+id/bottom_navigator"
+        android:layout_alignStart="@+id/textViewContactTel"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:srcCompat="@drawable/email_us" />
+    <ImageButton
+        android:id="@+id/imageButtonPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_navigator"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/phone_us" />
+    <ImageButton
+        android:id="@+id/imageButtonFacebook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_navigator"
+        android:layout_alignEnd="@+id/textViewContactTel"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
+        android:background="#00FFFFFF"
+        app:srcCompat="@drawable/social_media" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
@@ -35,5 +134,7 @@
         app:labelVisibilityMode="labeled"
         app:menu="@menu/menu"
         android:layout_alignParentBottom="true"/>
+
+
 
 </RelativeLayout>
