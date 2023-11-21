@@ -7,11 +7,18 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
+    Button btnShopNow;
+    TextView textViewSeeAll;
 BottomNavigationView bottomNavigationView;
 
     @Override
@@ -19,12 +26,35 @@ BottomNavigationView bottomNavigationView;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btnShopNow = findViewById(R.id.btnShopNow);
+        textViewSeeAll = findViewById(R.id.textViewSeeAll);
+
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.home);
 
         // In any other activity where you want to access the username
         SharedPreferences preferences = getSharedPreferences("user_credentials", MODE_PRIVATE);
         String username = preferences.getString("username", "Please Login!");
+
+        btnShopNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ShopActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0,0);
+            }
+        });
+
+        textViewSeeAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                    Intent intent = new Intent(MainActivity.this, CategoriesActivity.class);
+                    startActivity(intent);
+                overridePendingTransition(0,0);
+            }
+        });
+
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
