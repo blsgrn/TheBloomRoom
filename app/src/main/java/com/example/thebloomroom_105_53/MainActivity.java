@@ -17,7 +17,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnShopNow;
+    Button btnShopNow, btnSignUp;
     TextView textViewSeeAll;
 BottomNavigationView bottomNavigationView;
 
@@ -28,6 +28,7 @@ BottomNavigationView bottomNavigationView;
 
         btnShopNow = findViewById(R.id.btnShopNow);
         textViewSeeAll = findViewById(R.id.textViewSeeAll);
+        btnSignUp = findViewById(R.id.btnSignUp);
 
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.home);
@@ -54,7 +55,14 @@ BottomNavigationView bottomNavigationView;
                 overridePendingTransition(0,0);
             }
         });
-
+        btnSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0,0);
+            }
+        });
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
