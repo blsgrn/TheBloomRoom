@@ -1,16 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.TheBloomRoom_105_53" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <item name="colorPrimary">@color/primary_1</item>
-        <item name="colorPrimaryVariant">@color/primary_2</item>
-        <item name="colorOnPrimary">@color/primary_3</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/secondary_1</item>
-        <item name="colorSecondaryVariant">@color/secondary_2</item>
-        <item name="colorOnSecondary">@color/primary_4</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-    </style>
+<!-- Base application theme. -->
+<style name="Base.Theme.TheBloomRoom_105_53" parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Customize your light theme here. -->
+    <item name="colorPrimary">@color/primary_1</item>
+    <item name="colorPrimaryVariant">@color/primary_2</item>
+    <item name="colorOnPrimary">@color/primary_3</item>
+    <!-- Secondary brand color. -->
+    <item name="colorSecondary">@color/secondary_1</item>
+    <item name="colorSecondaryVariant">@color/secondary_2</item>
+    <item name="colorOnSecondary">@color/primary_4</item>
+    <!-- Status bar color. -->
+    <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    <item name="android:textColor">@color/black</item>
+</style>
+
+<style name="Theme.TheBloomRoom_105_53" parent="Base.Theme.TheBloomRoom_105_53" />
 </resources>

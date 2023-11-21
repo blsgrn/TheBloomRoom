@@ -34,6 +34,7 @@
         android:layout_below="@+id/textViewError"
         android:layout_marginTop="16dp"
         android:hint="Username"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/edit_text_background"
         android:padding="12dp"
         android:inputType="textEmailAddress"/>
@@ -45,6 +46,7 @@
         android:layout_below="@id/editTextUsername"
         android:layout_marginTop="16dp"
         android:hint="Password"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/edit_text_background"
         android:padding="12dp"
         android:inputType="textPassword"/>
@@ -56,6 +58,7 @@
         android:layout_below="@id/editTextPassword"
         android:layout_marginTop="16dp"
         android:hint="Confirm Password"
+        android:layout_marginHorizontal="20dp"
         android:background="@drawable/edit_text_background"
         android:padding="12dp"
         android:inputType="textPassword"/>
@@ -69,29 +72,36 @@
         android:layout_below="@id/editTextConfirmPassword"
         android:layout_marginTop="24dp"
         android:text="Login"
+        android:layout_marginHorizontal="20dp"
         android:textColor="@android:color/white"
         android:padding="16dp"/>
+
 
     <TextView
         android:id="@+id/textViewLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/buttonLogin"
-        android:layout_marginTop="16dp"
-        android:text="Not a registered customer? Signup"
-        android:textColor="@android:color/secondary_text_light"
-        android:gravity="center"/>
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_below="@+id/buttonLogin"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_toStartOf="@+id/buttonSignup"
+        android:gravity="center"
+        android:text="Not a registered customer?"
+        android:textColor="@color/secondary_1"
+        android:textSize="14dp" />
 
     <Button
         android:id="@+id/buttonSignup"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewLogin"
-        android:layout_marginTop="8dp"
+        android:layout_below="@+id/buttonLogin"
+        android:layout_alignEnd="@+id/buttonLogin"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/button_background"
+        android:padding="16dp"
         android:text="Signup"
-        android:textColor="@android:color/white"
-        android:padding="16dp"/>
-
+        android:textColor="@color/white" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"

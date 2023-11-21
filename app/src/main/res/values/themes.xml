@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="android:textColor">@color/black</item>
     </style>
 
     <style name="Theme.TheBloomRoom_105_53" parent="Base.Theme.TheBloomRoom_105_53" />
