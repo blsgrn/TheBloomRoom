@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_EMAIL" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -25,9 +31,6 @@
             android:name=".PaymentMessageActivity"
             android:exported="false" />
         <activity
-            android:name=".PaymentMessage"
-            android:exported="false" />
-        <activity
             android:name=".PaymentActivity"
             android:exported="false" />
         <activity
@@ -35,9 +38,6 @@
             android:exported="false" />
         <activity
             android:name=".FlowerListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".TestActivity"
             android:exported="false" />
         <activity
             android:name=".AddFlowerActivity"
@@ -70,5 +70,10 @@
             </intent-filter>
         </activity>
     </application>
+
+
+
+
+
 
 </manifest>
