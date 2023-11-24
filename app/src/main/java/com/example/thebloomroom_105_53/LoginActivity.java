@@ -62,12 +62,12 @@ public class LoginActivity extends AppCompatActivity {
                     textViewError.setText("Passwords did not match!");
                 }else if (checkUserCredentials(username, password)) { //Checking if the user entered values are matching with the data in the database
                     if (username.equals("admin")) { //Checking whether the username is admin -- if the username is admin, that user is an admin user
-                        // Redirect to AdminPanelActivity -- only admin user will get to access the AdminPanel
+                        // Redirect to AdminPanelActivity
                         Intent intent = new Intent(LoginActivity.this, AdminPanelActivity.class);
                         startActivity(intent);
                         overridePendingTransition(0,0);
                     } else {
-                        // Redirect to DashboardActivity -- for all the non-admin users (regular users)
+                        // Redirect to DashboardActivity
                         Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                         startActivity(intent);
                         overridePendingTransition(0,0);

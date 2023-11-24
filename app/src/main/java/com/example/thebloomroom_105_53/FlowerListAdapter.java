@@ -37,7 +37,6 @@ public class FlowerListAdapter extends RecyclerView.Adapter<FlowerListAdapter.Fl
 
         holder.textViewFlowerId.setText("Flower ID: " + String.valueOf(flower.getId()));
         holder.textViewFlowerName.setText("Flower Name: " + flower.getName());
-//        holder.textViewFlowerDescription.setText("Description: " + flower.getDescription());
         holder.textViewFlowerPrice.setText(String.format("Price: Rs %.2f", flower.getPrice()));
         holder.textViewFlowerCategory.setText("Category: " + flower.getCategory());
         holder.textViewFlowerImageFilename.setText("Image Filename: " + flower.getImageFilename());

@@ -72,7 +72,7 @@ BottomNavigationView bottomNavigationView;
 
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.info);
-        // In any other activity where you want to access the username
+
         SharedPreferences preferences = getSharedPreferences("user_credentials", MODE_PRIVATE);
         String username = preferences.getString("username", "Please Login!");
 

@@ -50,10 +50,10 @@ public class PaymentActivity extends AppCompatActivity {
         }
 
         buttonProcess.setOnClickListener(view -> {
-            // Get the selected radio button's ID
+
             int selectedRadioButtonId = radioGroup.getCheckedRadioButtonId();
             if (selectedRadioButtonId != -1) {
-                // Find the selected radio button
+
                 RadioButton selectedRadioButton = findViewById(selectedRadioButtonId);
 
                 // Get the values
@@ -61,12 +61,12 @@ public class PaymentActivity extends AppCompatActivity {
                 double totalAmount = Double.parseDouble(textViewCalculatedTotal.getText().toString());
                 String paymentMethod = selectedRadioButton.getText().toString();
 
-                // Create a DBHelper instance and insert the payment record
+
                 DBHelper dbHelper = new DBHelper(PaymentActivity.this);
                 dbHelper.insertPaymentRecord(customerName, totalAmount, paymentMethod);
                 Toast.makeText(PaymentActivity.this, "Process success!", Toast.LENGTH_SHORT).show();
 
-//                 Optionally, you can redirect the user to another activity or perform other actions
+//
                  Intent newIntent = new Intent(PaymentActivity.this, PaymentMessageActivity.class);
                  startActivity(newIntent);
                 overridePendingTransition(0, 0);

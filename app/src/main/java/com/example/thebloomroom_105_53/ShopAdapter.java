@@ -49,7 +49,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.FlowerViewHold
         if (resourceId != 0) {
             holder.imageViewFlower.setImageResource(resourceId);
         } else {
-            // If the resource is not found, you can set a default image or handle it accordingly
+            // If the resource is not found, set a default image or handle it accordingly
             holder.imageViewFlower.setImageResource(R.drawable.no_image);
         }
 

@@ -35,7 +35,7 @@ public class CategoriesActivity extends AppCompatActivity {
                 // Pass the selected category to the ShopActivity
                 intent.putExtra("selectedCategory", selectedCategory);
 
-                // Start the ShopActivity
+
                 startActivity(intent);
 
                 // Override the transition animation
@@ -67,7 +67,7 @@ public class CategoriesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Get the category associated with the clicked button
-                String selectedCategory = "Seasonal"; // Change this to dynamically get the selected category
+                String selectedCategory = "Seasonal";
 
                 // Create an Intent to start the ShopActivity
                 Intent intent = new Intent(v.getContext(), ShopActivity.class);
@@ -86,7 +86,7 @@ public class CategoriesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Get the category associated with the clicked button
-                String selectedCategory = "Orchid"; // Change this to dynamically get the selected category
+                String selectedCategory = "Orchid";
 
                 // Create an Intent to start the ShopActivity
                 Intent intent = new Intent(v.getContext(), ShopActivity.class);
@@ -105,7 +105,7 @@ public class CategoriesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Get the category associated with the clicked button
-                String selectedCategory = "Lily"; // Change this to dynamically get the selected category
+                String selectedCategory = "Lily";
 
                 // Create an Intent to start the ShopActivity
                 Intent intent = new Intent(v.getContext(), ShopActivity.class);
@@ -124,7 +124,7 @@ public class CategoriesActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Get the category associated with the clicked button
-                String selectedCategory = "Rose"; // Change this to dynamically get the selected category
+                String selectedCategory = "Rose";
 
                 // Create an Intent to start the ShopActivity
                 Intent intent = new Intent(v.getContext(), ShopActivity.class);

@@ -37,7 +37,7 @@ public class PaymentRecordAdapter extends RecyclerView.Adapter<PaymentRecordAdap
         holder.textViewReceiptNo.setText("Flower ID: " + String.valueOf(paymentRecord.getReceiptNo()));
         holder.textViewCustomer.setText("Customer Name: " + paymentRecord.getCustomer());
         holder.textViewAmountPaid.setText(String.format("Price: Rs %.2f", paymentRecord.getTotal()));
-        holder.textViewPaymentMethod.setText("Category: " + paymentRecord.getMethod());
+        holder.textViewPaymentMethod.setText("Payment Method: " + paymentRecord.getMethod());
 
         final int currentPosition = position;
 

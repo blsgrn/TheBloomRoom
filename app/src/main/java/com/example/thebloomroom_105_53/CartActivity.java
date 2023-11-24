@@ -31,7 +31,7 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnIte
 
         buttonProcessPay = findViewById(R.id.buttonProcessPay);
 
-        // Initialize your adapter and set it to the RecyclerView
+        // Initialize adapter and set it to the RecyclerView
         List<CartItem> cartItems = getCartItemsFromDatabase();
         double initialTotal = calculateUpdatedTotal();
         textViewTotal.setText("Total (Rs): " + String.valueOf(initialTotal));
@@ -44,9 +44,9 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnIte
         buttonProcessPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                double totalAmount = calculateUpdatedTotal(); // Assuming calculateUpdatedTotal() returns the total amount
+                double totalAmount = calculateUpdatedTotal();
                 Intent intent = new Intent(v.getContext(), PaymentActivity.class);
-                intent.putExtra("TOTAL_AMOUNT", totalAmount); // Use a key to identify the data in PaymentActivity
+                intent.putExtra("TOTAL_AMOUNT", totalAmount);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -54,7 +54,7 @@ public class CartActivity extends AppCompatActivity implements CartAdapter.OnIte
     }
     @Override
     public void onItemRemoved(double removedItemPrice) {
-        // Update the total in your activity when an item is removed
+        // Update the total in activity when an item is removed
         double updatedTotal = calculateUpdatedTotal();
         textViewTotal.setText("Total (Rs): " + String.valueOf(updatedTotal));
     }

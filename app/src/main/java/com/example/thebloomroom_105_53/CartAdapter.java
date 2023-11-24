@@ -38,7 +38,7 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        // Bind data to views in your item layout
+        // Bind data to views in item layout
         CartItem currentItem = cartItems.get(position);
         holder.itemNameTextView.setText("Flower Name: " + currentItem.getName());
         holder.itemIdTextView.setText("Flower ID: " + currentItem.getItemId());
@@ -85,7 +85,7 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
         TextView itemCategoryTextView;
 
         ImageButton btnRemoveItem;
-        // Add more views as needed
+
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -94,7 +94,6 @@ public class CartAdapter  extends RecyclerView.Adapter<CartAdapter.ViewHolder> {
             itemPriceTextView = itemView.findViewById(R.id.itemPriceTextView);
             itemCategoryTextView = itemView.findViewById(R.id.itemCategoryTextView);
             btnRemoveItem = itemView.findViewById(R.id.btnRemoveItem);
-            // Initialize other views as needed
         }
     }
 
