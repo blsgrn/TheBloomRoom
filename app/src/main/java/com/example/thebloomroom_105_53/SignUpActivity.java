@@ -28,6 +28,8 @@ public class SignUpActivity extends AppCompatActivity {
     private TextView textViewError;
 
     private Button buttonSignup, buttonLogin;
+    boolean containsLetter = false;
+    boolean containsNumber = false;
 
 BottomNavigationView bottomNavigationView;
 
@@ -61,12 +63,21 @@ BottomNavigationView bottomNavigationView;
                     String email = editTextEmail.getText().toString();
 
                     // Simple input validation
+
+                    containsLetter = false;
+                    containsNumber = false;
                     //Checking if the user has entered values for all the input fields
                     if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || email.isEmpty()) {
                         textViewError.setText("Please fill in all fields.");
+                    } else if (username.length() < 6 ) {
+                        textViewError.setText("Username must be at least 6 characters.");
+                    } else if (password.length() < 6 ) {
+                        textViewError.setText("Password must be at least 6 characters.");
+                    }else if (!containsLetterAndNumber(password)) {
+                        textViewError.setText("Password must contain at least one letter and one number.");
                     } else if (!password.equals(confirmPassword)) { //Checking if the user entered values in Password input field & Confirm Password input filed match
                         textViewError.setText("Passwords do not match.");
-                    } else if (!isValidEmail(email)) {//Checking if the user has entered a proper email, to check this Email format checking regular expression is used
+                    }else if (!isValidEmail(email)) {//Checking if the user has entered a proper email, to check this Email format checking regular expression is used
                         textViewError.setText("Invalid email address.");
                     } else {
                         // Open the database for writing
@@ -137,8 +148,31 @@ BottomNavigationView bottomNavigationView;
         });
     }
 
+
     private boolean isValidEmail(String email) {
         String emailPattern = "^[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+$";
         return Pattern.matches(emailPattern, email);
+    }
+
+    //function to check if password contains a letter and a number
+
+    private boolean containsLetterAndNumber(String password) {
+         containsLetter = false;
+        containsNumber = false;
+
+        for (char c : password.toCharArray()) {
+            if (Character.isLetter(c)) {
+                containsLetter = true;
+            } else if (Character.isDigit(c)) {
+                containsNumber = true;
+            }
+
+            // Break the loop if both conditions are met
+            if (containsLetter && containsNumber) {
+                break;
+            }
+        }
+
+        return containsLetter && containsNumber;
     }
 }

@@ -17,31 +17,22 @@ public class PaymentRecord {
         return receiptNo;
     }
 
-    public void setReceiptNo(int receiptNo) {
-        this.receiptNo = receiptNo;
-    }
 
     public String getCustomer() {
         return customer;
     }
 
-    public void setCustomer(String customer) {
-        this.customer = customer;
-    }
+
 
     public double getTotal() {
         return total;
     }
 
-    public void setTotal(double total) {
-        this.total = total;
-    }
+
 
     public String getMethod() {
         return method;
     }
 
-    public void setMethod(String method) {
-        this.method = method;
-    }
+
 }

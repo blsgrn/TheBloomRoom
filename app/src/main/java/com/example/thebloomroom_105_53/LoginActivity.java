@@ -20,6 +20,7 @@ import com.google.android.material.navigation.NavigationBarView;
 public class LoginActivity extends AppCompatActivity {
     private EditText editTextUsername;
     private EditText editTextPassword;
+    private EditText editTextConfirmPassword;
     private Button buttonLogin;
     private TextView textViewError;
     private DBHelper dbHelper;
@@ -36,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
+        editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
         buttonSignup = findViewById(R.id.buttonSignup);
         textViewError = findViewById(R.id.textViewError);
@@ -50,12 +52,15 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username = editTextUsername.getText().toString();
                 String password = editTextPassword.getText().toString();
+                String confirmPw = editTextConfirmPassword.getText().toString();
 
                 //Simple validation
                 //Checking if the user has entered values for all the input fields
                 if (username.isEmpty() || password.isEmpty()) {
                     textViewError.setText("Please fill in all fields.");
-                } else if (checkUserCredentials(username, password)) { //Checking if the user entered values are matching with the data in the database
+                } else if (!password.equals(confirmPw)){
+                    textViewError.setText("Passwords did not match!");
+                }else if (checkUserCredentials(username, password)) { //Checking if the user entered values are matching with the data in the database
                     if (username.equals("admin")) { //Checking whether the username is admin -- if the username is admin, that user is an admin user
                         // Redirect to AdminPanelActivity -- only admin user will get to access the AdminPanel
                         Intent intent = new Intent(LoginActivity.this, AdminPanelActivity.class);

@@ -39,17 +39,13 @@ public int getId() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+
 
     public double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+
 
     public String getCategory() {
         return category;
@@ -63,9 +59,7 @@ public int getId() {
         return imageFilename;
     }
 
-    public void setImageFilename(String imageFilename) {
-        this.imageFilename = imageFilename;
-    }
+
 
 
 }

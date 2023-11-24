@@ -30,9 +30,6 @@ public class CartItem {
         return itemPrice;
     }
 
-    public void setPrice(double price) {
-        this.itemPrice = price;
-    }
 
     public String getCategory() {
         return itemCategory;
